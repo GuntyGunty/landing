@@ -1,0 +1,29 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-view1">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+      .cc-label {
+        font-size: 100px;
+      }
+    </style>
+
+    <div class="card">
+      <!-- <div class="circle">C</div> -->
+      <h1 class="cc-label">Creative commons</h1>
+      <p>affiliate Belarus</p>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-view1',
+    });
+  </script>
+</dom-module>

@@ -1,0 +1,37 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-view10">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+      .image {
+        background-image: url('assets/images/placeholder.jpg');
+        width: 400px;
+        height: 300px;
+      }
+    </style>
+
+    <div class="card">
+      <!-- <div class="circle">8</div> -->
+      <h1>Кантакты</h1>
+      <ul>
+        <li><a href="tel:123456789">Телефон</a></li>
+        <li><a href="mailto:forrana@gmail.com">E-mail</a></li>
+        <li><a href="">Адрес</a></li>
+      </ul>
+      <div class="image"></div>
+      <paper-button raised>Далучыцца</paper-button>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-view10',
+    });
+  </script>
+</dom-module>

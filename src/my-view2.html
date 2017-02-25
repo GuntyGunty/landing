@@ -1,0 +1,35 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-view2">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+
+      .image {
+        background-image: url('assets/images/placeholder.jpg');
+        width: 400px;
+        height: 300px;
+      }
+    </style>
+
+    <div class="card">
+      <!-- <div class="circle">2</div> -->
+      <h1>Што такое СС</h1>
+      <paper-button raised>Далучыцца</paper-button>
+      <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
+      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
+      <div class="image"></div>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-view2',
+    });
+  </script>
+</dom-module>

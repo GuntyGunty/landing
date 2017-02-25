@@ -1,0 +1,50 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-view8">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+      .image {
+        background-image: url('assets/images/placeholder.jpg');
+        width: 400px;
+        height: 300px;
+      }
+    </style>
+
+    <div class="card">
+      <!-- <div class="circle">8</div> -->
+      <h1>Што скачаць</h1>
+      <h2>Дапаможнікі</h2>
+        <div class="image"></div>
+        <ul>
+          <li><a href="">Спасылка</a></li>
+          <li><a href="">Спасылка</a></li>
+          <li><a href="">Спасылка</a></li>
+          <li><a href="">Спасылка</a></li>
+          <li><a href="">Спасылка</a></li>
+          <li><a href="">Спасылка</a></li>
+        </ul>
+      <h2>Налепкі</h2>
+        <div class="image"></div>
+        <ul>
+          <li><a href="">Спасылка</a></li>
+          <li><a href="">Спасылка</a></li>
+          <li><a href="">Спасылка</a></li>
+          <li><a href="">Спасылка</a></li>
+          <li><a href="">Спасылка</a></li>
+          <li><a href="">Спасылка</a></li>
+        </ul>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-view8',
+    });
+  </script>
+</dom-module>
