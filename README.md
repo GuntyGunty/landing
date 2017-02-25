@@ -8,10 +8,21 @@ First, install [Polymer CLI](https://github.com/Polymer/polymer-cli) using
     npm install -g polymer-cli
      or
     yarn global add polymer-cli
+    
+Then you need to install all needed components, using this command
+
+    yarn && bower install
+      or
+    npm install && bower install
 
 ### Start the development server
 
-This command serves the app at `http://localhost:3000` and provides basic URL
+This command serves the app at `http://localhost:8080` and provides basic URL
+routing for the app:    
+
+    polymer serve --open
+
+However if you want live reload, use this command, it serves the app at `http://localhost:3000` and provides basic URL
 routing for the app:
 
     yarn dev
