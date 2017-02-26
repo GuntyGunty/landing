@@ -5,8 +5,6 @@
 <link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
 <link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
 <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
-<link rel="import" href="../bower_components/app-route/app-location.html">
-<link rel="import" href="../bower_components/app-route/app-route.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-stepper/paper-stepper.html">
@@ -15,7 +13,18 @@
 <link rel="import" href="../bower_components/paper-stepper/paper-icon-step.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
+
 <link rel="import" href="my-icons.html">
+<link rel="import" href="my-view1.html">
+<link rel="import" href="my-view2.html">
+<link rel="import" href="my-view3.html">
+<link rel="import" href="my-view4.html">
+<link rel="import" href="my-view5.html">
+<link rel="import" href="my-view6.html">
+<link rel="import" href="my-view7.html">
+<link rel="import" href="my-view8.html">
+<link rel="import" href="my-view9.html">
+<link rel="import" href="my-view10.html">
 
 <dom-module id="my-app">
   <template>
@@ -36,7 +45,7 @@
       }
 
       .drawer-list {
-        margin: 0 10px;
+        /*margin: 0 5px;*/
       }
 
       .drawer-list a {
@@ -51,61 +60,51 @@
         color: black;
         font-weight: bold;
       }
-    </style>
 
-    <app-location route="{{route}}"></app-location>
-    <app-route
-        route="{{route}}"
-        pattern="/:page"
-        data="{{routeData}}"
-        tail="{{subroute}}"></app-route>
+    </style>
 
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
       <app-drawer id="drawer">
-        <app-toolbar>Menu</app-toolbar>
-        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+        <app-toolbar>
+          Menu
+        </app-toolbar>
+        <iron-selector selected="{{selected}}" attr-for-selected="name" class="drawer-list" role="navigation">
           <template is="dom-repeat" id="left-menu-items" items="{{activeViews}}">
-            <a name="[[item.name]]" href="/[[item.name]]">[[item.label]]</a>
+            <a name="[[item.index]]" href="#[[item.name]]">[[item.label]]</a>
           </template>
         </iron-selector>
       </app-drawer>
 
       <!-- Main content -->
-      <app-header-layout has-scrolling-region>
-
+      <app-header-layout>
         <app-header condpaper-stepperenses reveals effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
             <div main-title>Falanster</div>
+            <paper-stepper selected={{selected}}>
+              <template is="dom-repeat" id="views-top" items="{{activeViews}}">
+                <paper-step title="[[item.label]]">
+                </paper-step>
+              </template>
+            </paper-stepper>
           </app-toolbar>
         </app-header>
 
-        <paper-stepper selected={{selected}}>
-          <template is="dom-repeat" id="views-top" items="{{activeViews}}">
-            <paper-step></paper-step>
-          </template>
-        </paper-stepper>
-        <iron-pages
-            selected="[[page]]"
-            attr-for-selected="name"
-            fallback-selection="view404"
-            role="main"
-            name="1"
-            >
-          <my-view1 name="view1"></my-view1>
-          <my-view2 name="view2"></my-view2>
-          <my-view3 name="view3"></my-view3>
-          <my-view4 name="view4"></my-view4>
-          <my-view5 name="view5"></my-view5>
-          <my-view6 name="view6"></my-view6>
-          <my-view7 name="view7"></my-view7>
-          <my-view8 name="view8"></my-view8>
-          <my-view9 name="view9"></my-view9>
-          <my-view10 name="view10"></my-view10>
-        </iron-pages>
+        <my-view1 name="view1" id="view1"></my-view1>
+        <my-view2 name="view2" id="view2"></my-view2>
+        <my-view3 name="view3" id="view3"></my-view3>
+        <my-view4 name="view4" id="view4"></my-view4>
+        <my-view5 name="view5" id="view5"></my-view5>
+        <my-view6 name="view6" id="view6"></my-view6>
+        <my-view7 name="view7" id="view7"></my-view7>
+        <my-view8 name="view8" id="view8"></my-view8>
+        <my-view9 name="view9" id="view9"></my-view9>
+        <my-view10 name="view10" id="view10"></my-view10>
+
       </app-header-layout>
     </app-drawer-layout>
+
   </template>
 
   <script>
@@ -113,23 +112,23 @@
       is: 'my-app',
       ready: function() {
         this.activeViews = [
-          { name: "view1", label: "Главная", index: 1 },
-          { name: "view2", label: "Што такое CC", index: 2 },
-          { name: "view3", label: "Фаландстэр і СС", index: 3 },
-          { name: "view4", label: "Гісторыя і планы", index: 4 },
-          { name: "view5", label: "Смачная творчасць", index: 5 },
-          { name: "view6", label: "Супрацоўнікі", index: 6 },
-          { name: "view7", label: "Сертыфікацыя", index: 7 },
-          { name: "view8", label: "Што скачаць", index: 8 },
-          { name: "view9", label: "Карысныя спасылкі", index: 9 },
-          { name: "view10", label: "Кантакты", index: 10 }
+          { name: "view1", label: "Главная", index: 0 },
+          { name: "view2", label: "Што такое CC", index: 1 },
+          { name: "view3", label: "Фаландстэр і СС", index: 2 },
+          { name: "view4", label: "Гісторыя і планы", index: 3 },
+          { name: "view5", label: "Смачная творчасць", index: 4 },
+          { name: "view6", label: "Супрацоўнікі", index: 5 },
+          { name: "view7", label: "Сертыфікацыя", index: 6 },
+          { name: "view8", label: "Што скачаць", index: 7 },
+          { name: "view9", label: "Карысныя спасылкі", index: 8 },
+          { name: "view10", label: "Кантакты", index: 9 }
         ];
       },
       properties: {
         page: {
           type: String,
           reflectToAttribute: true,
-          observer: '_pageChanged1',
+          observer: '_pageChanged',
         },
         selected: {
           type: String,
@@ -140,30 +139,27 @@
 
       observers: [
         '_routePageChanged(routeData.page)',
-        '_selectorChanged(selected)'
+        '_selectorChanged(selected)',
+        '_pageChanged(page)'
       ],
 
       _routePageChanged: function(page) {
-        this.page = page ? `${page}` : 'view1';
+        this.page = page ? page : 'view1';
         this.selected = this.page.split('view')[1] - 1;
 
-        if (!this.$.drawer.persistent) {
-          this.$.drawer.close();
-        }
       },
 
       _selectorChanged: function(selector) {
-        this.page = selector ? `view${+selector + 1}` : 'view1';
+        var url = location.href;               //Save down the URL without hash.
 
-        if (!this.$.drawer.persistent) {
-          this.$.drawer.close();
-        }
+        this.page = selector ? 'view'+( +selector + 1) : 'view1';
+        location.href = "/#"+this.page;                 //Go to the target element.
+        history.replaceState(null,null,url);   //Don't like hashes. Changing it back.
+
       },
 
-      _pageChanged1: function(page) {
-        // Load page import on demand. Show 404 page if fails
-        var resolvedPageUrl = this.resolveUrl('my-' + page + '.html');
-        this.importHref(resolvedPageUrl, null, this._showPage404, true);
+      _pageChanged: function(page) {
+      //  this.selected = page.split('view')[1];
       },
 
       _showPage404: function() {
