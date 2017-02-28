@@ -1,4 +1,6 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-view4">
@@ -19,29 +21,55 @@
     <div class="card">
       <!-- <div class="circle">4</div> -->
       <h1>Гісторыя дзейнасці і планы</h1>
-      <wow-tabs position="top">
-        <wow-panel title="The first tab">
+      <paper-tabs selected="{{selected}}">
+        <paper-tab>
+          Tab 1
+        </paper-tab>
+        <paper-tab>
+          Tab 2
+        </paper-tab>
+        <paper-tab>
+          Tab 3
+        </paper-tab>
+      </paper-tabs>
+      <iron-pages flex selected="{{selected}}">
+        <div>
+          <div class="image"></div>
+          <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
+          <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
+        </div>
+        <div>
+          <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
+          <div class="image"></div>
+          <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
+        </div>
+        <div>
           <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
           <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
           <div class="image"></div>
-        </wow-panel>
-        <wow-panel title="The second tab">
-          <div class="image"></div>
-          <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-          <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
-        </wow-panel>
-        <wow-panel title="The third tab">
-          <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-          <div class="image"></div>
-          <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
-        </wow-panel>
-      </wow-tabs>
+        </div>
+      </iron-pages>
     </div>
   </template>
 
   <script>
     Polymer({
       is: 'my-view4',
+      ready: function() {
+        this.selected = 0;
+      },
+      properties: {
+        selected: {
+          type: String,
+          reflectToAttribute: true
+        }
+      },
     });
+    // let pages = document.querySelector('iron-pages'),
+    //     tabs = document.querySelector('paper-tabs');
+    //
+    // tabs.addEventListener('iron-select', () => {
+    //   pages.selected = tabs.selected;
+    // })
   </script>
 </dom-module>
