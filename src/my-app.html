@@ -15,7 +15,7 @@
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/simple-carousel/simple-carousel.html">
 <link rel="import" href="../bower_components/simple-carousel/carousel-slide.html">
-
+<link rel="import" href="../bower_components/app-localize-behavior/app-localize-behavior.html">
 
 
 <link rel="import" href="my-icons.html">
@@ -85,7 +85,7 @@
         <app-header condpaper-stepperenses reveals effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
-            <div main-title>Falanster</div>
+            <div main-title>{{localize('menu_label_falanster')}} </div>
             <paper-stepper selected={{selected}}>
               <template is="dom-repeat" id="views-top" items="{{activeViews}}">
                 <paper-step title="[[item.label]]">
@@ -114,6 +114,9 @@
   <script>
     Polymer({
       is: 'my-app',
+      behaviors: [
+       Polymer.AppLocalizeBehavior
+      ],
       ready: function() {
         this.activeViews = [
           { name: "view1", label: "Главная", index: 0 },
@@ -131,8 +134,10 @@
       properties: {
         page: {
           type: String,
-          reflectToAttribute: true,
-          observer: '_pageChanged',
+          reflectToAttribute: true
+        },
+        language: {
+          value: 'by'
         },
         selected: {
           type: String,
@@ -143,8 +148,7 @@
 
       observers: [
         '_routePageChanged(routeData.page)',
-        '_selectorChanged(selected)',
-        '_pageChanged(page)'
+        '_selectorChanged(selected)'
       ],
 
       _routePageChanged: function(page) {
@@ -162,13 +166,13 @@
 
       },
 
-      _pageChanged: function(page) {
-      //  this.selected = page.split('view')[1];
-      },
-
       _showPage404: function() {
         this.page = 'view404';
       },
+
+      attached: function() {
+        this.loadResources(this.resolveUrl('assets/locales.json'));
+      }
     });
   </script>
 </dom-module>
