@@ -69,7 +69,7 @@
 
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
-      <app-drawer id="drawer">
+      <!-- <app-drawer id="drawer">
         <app-toolbar>
           Menu
         </app-toolbar>
@@ -78,14 +78,14 @@
             <a name="[[item.index]]" href="#[[item.name]]">[[item.label]]</a>
           </template>
         </iron-selector>
-      </app-drawer>
+      </app-drawer> -->
 
       <!-- Main content -->
       <app-header-layout>
         <app-header condpaper-stepperenses reveals effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
-            <div main-title>{{localize('menu_label_falanster')}} </div>
+            <div main-title>Falanster {{localize('menu_label_falanster')}} </div>
             <paper-stepper selected={{selected}}>
               <template is="dom-repeat" id="views-top" items="{{activeViews}}">
                 <paper-step title="[[item.label]]">
