@@ -6,29 +6,63 @@
     <style include="shared-styles">
       :host {
         display: block;
-
-        padding: 10px;
+        padding: 0 10px 0 10px;
+        color: var(--app-general-dark-text-color);
       }
 
       .image {
-        background-image: url('assets/images/placeholder.jpg');
+        background-image: url('http://lorempixel.com/640/480/');
         width: 400px;
         height: 300px;
         flex: 1;
       }
+
+      .tomato-image {
+        background-image: url('http://lorempixel.com/640/480/');
+        width: 5em;
+        height: 5em;
+        flex: 1 10%;
+        align-self: center;
+      }
+
+      .marked-text {
+        flex: 1 90%;
+      }
+
+      .mark {
+        background-color: var(--app-mark-color);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .general-content {
+        flex: 1;
+        display: flex;
+        direction: row;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+      }
     </style>
 
-    <article class="card">
+    <article class="card view2-card">
       <!-- <div class="circle">2</div> -->
-      <section class="text">
-        <h1>Што такое СС</h1>
-      <!-- <paper-button raised class="header">Далучыцца</paper-button> -->
-        <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
-        <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
-        <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
-        <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
-      </section>
-      <div class="image"></div>
+        <section class="mark">
+          <div class="tomato-image"></div>
+          <p class="marked-text">Толькі ўяві: ты,  душэўны і сябравіты,  жадаеш накарміць смачнымі дранчікамі ўвесь навакольны  свет.  Гатаваць самому, дарэчы, сэнсу няма, а вось навучыць рэцепту – справа іншая. Ты робіш дранікаблог, куды ўжо гатовы дадаць чыёсці відэа, прышпільныя фатаграфіі з інета і пашагавыя інструкцыі, што распрацаваў кулінар з лепшай у горадзе сталоўкі. І ўсе бы добра, але капірайт глядзіць на цябе і ціхенька гаворыць “ну-ну, паспрабуй -  я пагляджу”.</p>
+        </section>
+        <section class="general-content">
+          <section>
+            <h1>Што такое Creative Commons</h1>
+            <p>“А вось і паспрабую” – аднойчы дзёрзка адказаў капірайту прафесар права Лорэнс Лессіг і ў 2001 годзе даў дарогу Creative Commons (CC) -  некамерцыйнай  арганізацыі,  што стварыла бясплатныя для выкарыстання  публічныя ліцэнзіі. З дапамогай гэтых ліцэнзій аўтары могуць даступна і зразумела выказаць сваю волю адносна твораў і распаўсюджваць іх больш шырока і вальготна.</p>
+          </section>
+          <section>
+            <div class="image"></div>
+          </section>
+        </section>
     </article>
   </template>
 

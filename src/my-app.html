@@ -13,8 +13,6 @@
 <link rel="import" href="../bower_components/paper-stepper/paper-icon-step.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
-<link rel="import" href="../bower_components/simple-carousel/simple-carousel.html">
-<link rel="import" href="../bower_components/simple-carousel/carousel-slide.html">
 <link rel="import" href="../bower_components/app-localize-behavior/app-localize-behavior.html">
 
 
@@ -34,8 +32,12 @@
   <template>
     <style>
       :host {
-        --app-primary-color: #4285f4;
+        --app-primary-color: #808080;
         --app-secondary-color: black;
+        --app-header-color: #ccc;
+        --app-mark-color: #ffff00;
+        --app-general-light-text-color: #fff;
+        --app-general-dark-text-color: #000;
 
         display: block;
       }
@@ -65,6 +67,10 @@
         font-weight: bold;
       }
 
+      my-view1 {
+        background-color: var(--app-header-color);
+      }
+
     </style>
 
     <app-drawer-layout fullbleed>
@@ -73,33 +79,36 @@
         <app-toolbar>
           Menu
         </app-toolbar>
-        <iron-selector selected="{{selected}}" attr-for-selected="name" class="drawer-list" role="navigation">
-          <template is="dom-repeat" id="left-menu-items" items="{{activeViews}}">
-            <a name="[[item.index]]" href="#[[item.name]]">[[item.label]]</a>
-          </template>
+        <iron-selector selected="{{selected}}" attr-for-selected="name" slot="drawer-list" role="navigation">
+          <dom-repeat>
+            <template id="left-menu-items" items="{{activeViews}}">
+              <a name="[[item.index]]" href="#[[item.name]]">[[item.label]]</a>
+            </template>
+          </dom-repeat>
         </iron-selector>
       </app-drawer> -->
 
       <!-- Main content -->
       <app-header-layout>
-        <app-header condpaper-stepperenses reveals effects="waterfall">
+        <app-header condpaper-stepperenses reveals effects="waterfall" class="falanster-menu">
           <app-toolbar>
-            <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
-            <div main-title>Falanster {{localize('menu_label_falanster')}} </div>
-            <paper-stepper selected={{selected}}>
-              <template is="dom-repeat" id="views-top" items="{{activeViews}}">
-                <paper-step title="[[item.label]]">
-                </paper-step>
-              </template>
-            </paper-stepper>
+            <div main-title>Фаланстэр </div>
+            <!-- <paper-stepper selected={{selected}}>
+              <dom-repeat>
+                <template id="views-top" items="{{activeViews}}">
+                  <paper-step title="[[item.label]]">
+                  </paper-step>
+                </template>
+              </dom-repeat>
+            </paper-stepper> -->
           </app-toolbar>
         </app-header>
 
         <my-view1 name="view1" id="view1"></my-view1>
         <my-view2 name="view2" id="view2"></my-view2>
         <my-view3 name="view3" id="view3"></my-view3>
-        <my-view4 name="view4" id="view4"></my-view4>
         <my-view5 name="view5" id="view5"></my-view5>
+        <my-view4 name="view4" id="view4"></my-view4>
         <my-view6 name="view6" id="view6"></my-view6>
         <my-view7 name="view7" id="view7"></my-view7>
         <my-view8 name="view8" id="view8"></my-view8>

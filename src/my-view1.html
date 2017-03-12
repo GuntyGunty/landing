@@ -7,17 +7,41 @@
       :host {
         display: block;
 
-        padding: 10px;
+        padding: 0 10px 0 10px;
       }
-      .cc-label {
-        font-size: 100px;
+      h1.cc-label {
+        font-size: 3.5em;
+        margin-bottom: -0.4em;
+      }
+
+      .card {
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .image {
+        background-image: url('http://lorempixel.com/640/480/');
+        width: 5em;
+        height: 5em;
+      }
+
+      .flex-items {
+        align-self: center;
+        color: var(--app-general-light-text-color);
+        font-size: 1.25em;
+      }
+
+      .hash-tag {
+        color: var(--app-mark-color);
+        font-size: 1.5em;
       }
     </style>
 
-    <div class="card">
-      <!-- <div class="circle">C</div> -->
-      <h1 class="cc-label">Creative commons</h1>
-      <p>affiliate Belarus</p>
+    <div class="card view1-card">
+      <div class="image flex-items"></div>
+      <h1 class="cc-label flex-items">creative commons</h1>
+      <p class="flex-items">affiliate in Belarus</p>
+      <p class="flex-items hash-tag">#ccbelarus</p>
     </div>
   </template>
 

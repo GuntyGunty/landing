@@ -7,30 +7,29 @@
       :host {
         display: block;
 
-        padding: 10px;
+        padding: 0 10px 0 10px;
       }
       .image {
-        background-image: url('assets/images/placeholder.jpg');
+        background-image: url('http://lorempixel.com/640/480/');
         width: 400px;
         height: 300px;
-        flex: 1;
       }
 
-      .text {
-        order: 1;
-        padding-left: 1%;
+      .card {
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
       }
 
     </style>
 
-    <div class="card">
-      <!-- <div class="circle">3</div> -->
-      <section class="text">
+    <div class="card view3-card">
+      <section>
         <h1>Чаму гэтым займаецца Фаланстэр?</h1>
-        <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-        <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
+        <p>Мы таксама любім дранікі:) І шчыра жадаем папулярызаваць ідэі спрашчэння занадаўства, што пацягне за сабой больш адкрыты дасяг да твораў.  Фаланстэр з'яўляецца філіялам Creative Commons у Беларусі (хэш-тэг #ccbelarus). Мы верым, што за ліцэнзіямі СС крыецца будучыня ўзаемаадносін паміж аўтарамі і карыстальнікамі, а капірайт - гэта застарэла, нягнутка і нямодна. Дзеля міру ў аўтарскім свеце мы актыўна спрыяем даследаванням, вывучэнню прымянення юрыдычных механізмаў, якія дазваляюць пераадольваць бар'еры капірайту.</p>
       </section>
-      <div class="image"></div>
+      <section>
+        <div class="image"></div>
+      </section>
     </div>
   </template>
 
