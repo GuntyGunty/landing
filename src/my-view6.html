@@ -1,48 +1,80 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="shared-styles.html">
 
-<dom-module id="my-view6">
+  <dom-module id="my-view6">
   <template>
     <style include="shared-styles">
       :host {
         display: block;
         padding: 0 10px 0 10px;
       }
+
+      .flex-item {
+        flex: 1;
+      }
+
+      header.flex-item {
+        align-self: center;
+      }
+
+      .middle-section {
+        display: flex;
+      }
+
+      .card {
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .tomato-image {
+        background-image: url('http://lorempixel.com/640/480/');
+        width: 5em;
+        height: 5em;
+        flex: 1 10%;
+        align-self: center;
+      }
+
+      paper-button{
+        width: 100%;
+        color: #fff;
+      }
+
+      .active-elements {
+        align-self: center;
+        width: 100%;
+      }
     </style>
 
     <div class="card view6-card">
-      <!-- <div class="circle">6</div> -->
-      <h1>З кім мы працуем</h1>
-      <h2>Кансультацыі</h2>
-        <paper-button raised>Атрымаць кансультацыю</paper-button>
-        <ul>
-          <li><a href="">Спасылка</a></li>
-          <li><a href="">Спасылка</a></li>
-          <li><a href="">Спасылка</a></li>
-          <li><a href="">Спасылка</a></li>
-          <li><a href="">Спасылка</a></li>
-          <li><a href="">Спасылка</a></li>
-        </ul>
-      <h2>Стажыроўкі і валанцерства</h2>
-        <paper-button raised>Запісацца</paper-button>
-        <ul>
-          <li><a href="">Спасылка</a></li>
-          <li><a href="">Спасылка</a></li>
-          <li><a href="">Спасылка</a></li>
-          <li><a href="">Спасылка</a></li>
-          <li><a href="">Спасылка</a></li>
-          <li><a href="">Спасылка</a></li>
-        </ul>
-      <h2>Лекцыі, прэзентаціі, прамоцыі</h2>
-        <paper-button raised>Кантакт</paper-button>
-        <ul>
-          <li><a href="">Спасылка</a></li>
-          <li><a href="">Спасылка</a></li>
-          <li><a href="">Спасылка</a></li>
-          <li><a href="">Спасылка</a></li>
-          <li><a href="">Спасылка</a></li>
-          <li><a href="">Спасылка</a></li>
-        </ul>
+      <header class="flex-item">
+        <h1>З кім мы працуем</h1>
+      </header>
+      <section class="flex-item middle-section">
+        <article class="flex-item">
+        <div class="tomato-image"></div>
+        <h2>Кансультацыі</h2>
+          <p>
+            Фаланстэр праводзіць бесплатныя кансультацыі па выкарыстанню ліцэнзій СС для:- прадстаўнікоў грамадскіх ініцыятыў- некамерцыйных арганізацый- блогераў, журналістаў- творцаў (музыкаў, пісьменнікаў, фільммэйкераў і т.д.)- навукоўцаў і даследнікаў
+          </p>
+        </article>
+        <article class="flex-item">
+          <div class="tomato-image"></div>
+          <h2>Стажыроўкі і валанцерства</h2>
+          <p>
+            Мы прапануем расшырэнне навуковага досведу адносна працы з ліцэнзіямі СС для студэнтаў, маладых спецыялістаў і даследчыкаў. У нас можна:- атрымаць тэму для курсавой або дыплома- прайсці студэнцкую практыку- паваланцёрыць непасрэдна ў арганізацыі
+          </p>
+        </article>
+        <article class="flex-item">
+          <div class="tomato-image"></div>
+          <h2>Лекцыі, прэзентаціі, прамоцыі</h2>
+          <p>
+            Каманда Фаланстэра праводзіць лекцыі і майстар-классы для:- супольнасцяў- навучэнцаў- працаўнікоў бібліятэк, музеяў, галерэй- настаўнікаў- усіх зацікаўленых.
+          </p>
+        </article>
+      </section>
+      <section class="flex-item active-elements">
+          <paper-button raised>Далучыцца</paper-button>
+      </section>
     </div>
   </template>
 
