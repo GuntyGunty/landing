@@ -9,19 +9,46 @@
 
         padding: 0 10px 0 10px;
       }
+
       .image {
-        background-image: url('assets/images/placeholder.jpg');
+        background-image: url('http://lorempixel.com/640/480/');
         width: 400px;
         height: 300px;
+        flex: 1;
+      }
+
+      .card {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        background-color: #b3b3b3;
+        color: var(--app-general-light-text-color);
+      }
+
+      h1 {
+        color: var(--app-general-light-text-color);
+      }
+
+      .main-container {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+      .header {
+        align-self: center;
       }
     </style>
 
     <div class="card view7-card">
-      <!-- <div class="circle">3</div> -->
-      <h1>Сертыфікацыя</h1>
-      <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
-      <div class="image"></div>
+      <header class="header">
+        <h1>Сертыфікація</h1>
+      </header>
+      <section class="main-container">
+        <p class="text">
+          Мы прапануем зацікаўленым супольнасцям, а таксама галерэям, бібліятэкам і музеям прасці нашу сертыфікацыю - пацверджанне таго, што вашы веб-рэсурсы адпавядаюць патрэбным крытэрыям адкрытасці і свабоднасці. Не хвалюйцеся: гэта не балюча - быццам камарык укусіць.  Затое потым наведвальнікам вашага блога ці партала не прыйдзецца доўга думаць, на якіх умовах можна ўзяць у вас той ці іншы артыкул або фатаграфію.
+        </p>
+        <div class="image"></div>
+      </section>
     </div>
   </template>
 

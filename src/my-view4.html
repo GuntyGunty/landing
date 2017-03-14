@@ -36,13 +36,17 @@
       .tab {
         font-size: 3em;
       }
-/*
+
       .header {
         flex: 1 100%;
-      }*/
+      }
 
       .tabs-header {
-        width: 20em;
+        width: 25em;
+        position: relative;
+        top: 4em;
+        margin-top: -4em;
+        left: 47em;
       }
 
       .tabs {
@@ -50,11 +54,44 @@
       }
 
       .header {
-        flex: 2;
+        flex: 1;
+        align-self: center;
+      }
+
+      .card {
+        flex-direction: column;
+        justify-content: center;
+        background-color: #333333;
+        color: var(--app-mark-color);
       }
 
       .tab-article {
         display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .text {
+        margin-top: 4em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .marked-block {
+        flex: 1;
+        background-color: var(--app-mark-color);
+        color: var(--app-general-dark-text-color);
+        width: 70%;
+        padding: 1em;
+      }
+
+      h1 {
+        color: var(--app-mark-color);
+      }
+
+      .marked-block h1 {
+        color: inherit;
       }
     </style>
 
@@ -63,8 +100,6 @@
       <header class="header">
         <h1>Гісторыя дзейнасці і планы</h1>
       </header>
-
-      <section class="text tabs">
         <paper-tabs selected="{{selected}}" scrollable class="tabs-header">
           <paper-tab class="tab">
             2016
@@ -76,30 +111,60 @@
             2018
           </paper-tab>
         </paper-tabs>
-      </section>
         <iron-pages selected="{{selected}}">
             <article class="tab-article">
               <div class="image1"></div>
               <section class="text">
-                <h1>Tab1</h1>
-                <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
-                <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
+                <header class="header">
+                  <h1>Што зрабілі:</h1>
+                </header>
+                <ul>
+                  <li>Вікіфікацыя (працягваем)</li>
+                  <li>стварэнне мануалаў для супольнасцяў і творцаў</li>
+                  <li>разгортванне сертыфікацыі арганізацый</li>
+                  <li>пераклад ліцэнзій на беларускую мову (конкурс)</li>
+                  <li>перамовы з супольнасцямі па сумеснай працы над зменай капірайта</li>
+                </ul>
+                <article class="marked-block">
+                  <header>
+                    <h1>
+                    Чакаемыя вынікі:
+                    </h1>
+                  </header>
+                  <p>
+                    Пазнаваемасць брэнда СС і валоданне элементарнымі ведамі ў мэтавых групах. Пастаянны паток валанцёраў, 3-4 партнёра па змене капірайта, веданне планаў і дэталяў дзяржворганаў па змяненні капірайта
+                  </p>
+                </article>
               </section>
             </article>
             <article class="tab-article">
               <div class="image2"></div>
               <section class="text">
-                <h1>Tab2</h1>
-                <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-                <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
+                <header class="header">
+                  <h1>Што плануем рабіць:</h1>
+                </header>
+                <ul>
+                  <li>Вікіфікацыя (працягваем)</li>
+                  <li>стварэнне мануалаў для супольнасцяў і творцаў</li>
+                  <li>разгортванне сертыфікацыі арганізацый</li>
+                  <li>пераклад ліцэнзій на беларускую мову (конкурс)</li>
+                  <li>перамовы з супольнасцямі па сумеснай працы над зменай капірайта</li>
+                </ul>
               </section>
             </article>
             <article class="tab-article">
               <div class="image3"></div>
               <section class="text">
-                <h1>Tab3</h1>
-                <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-                <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
+                <header class="header">
+                  <h1>Што будзем рабіць:</h1>
+                </header>
+                <ul>
+                  <li>Вікіфікацыя (працягваем)</li>
+                  <li>стварэнне мануалаў для супольнасцяў і творцаў</li>
+                  <li>разгортванне сертыфікацыі арганізацый</li>
+                  <li>пераклад ліцэнзій на беларускую мову (конкурс)</li>
+                  <li>перамовы з супольнасцямі па сумеснай працы над зменай капірайта</li>
+                </ul>
               </section>
             </article>
         </iron-pages>

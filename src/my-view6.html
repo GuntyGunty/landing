@@ -24,13 +24,14 @@
       .card {
         flex-direction: column;
         justify-content: center;
+        background-color: #b3b3b3;
+        color: var(--app-general-light-text-color);
       }
 
       .tomato-image {
         background-image: url('http://lorempixel.com/640/480/');
         width: 5em;
         height: 5em;
-        flex: 1 10%;
         align-self: center;
       }
 
@@ -42,6 +43,22 @@
       .active-elements {
         align-self: center;
         width: 100%;
+      }
+
+      article {
+        display: flex;
+        flex-direction: column;
+        -ms-align-items: center;
+        align-items: center;
+
+      }
+
+      h1 {
+        color: var(--app-general-light-text-color);
+      }
+
+      h2 {
+        color: var(--app-mark-color);
       }
     </style>
 
@@ -59,14 +76,14 @@
         </article>
         <article class="flex-item">
           <div class="tomato-image"></div>
-          <h2>Стажыроўкі і валанцерства</h2>
+          <h2>Стажыроўкі<br> і валанцерства</h2>
           <p>
             Мы прапануем расшырэнне навуковага досведу адносна працы з ліцэнзіямі СС для студэнтаў, маладых спецыялістаў і даследчыкаў. У нас можна:- атрымаць тэму для курсавой або дыплома- прайсці студэнцкую практыку- паваланцёрыць непасрэдна ў арганізацыі
           </p>
         </article>
         <article class="flex-item">
           <div class="tomato-image"></div>
-          <h2>Лекцыі, прэзентаціі, прамоцыі</h2>
+          <h2>Лекцыі,<br> прэзентаціі,<br> прамоцыі</h2>
           <p>
             Каманда Фаланстэра праводзіць лекцыі і майстар-классы для:- супольнасцяў- навучэнцаў- працаўнікоў бібліятэк, музеяў, галерэй- настаўнікаў- усіх зацікаўленых.
           </p>
