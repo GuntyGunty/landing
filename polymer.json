@@ -2,17 +2,17 @@
   "entrypoint": "index.html",
   "shell": "src/my-app.html",
   "fragments": [
-    "src/my-view1.html",
-    "src/my-view2.html",
-    "src/my-view3.html",
-    "src/my-view4.html",
-    "src/my-view5.html",
-    "src/my-view6.html",
-    "src/my-view7.html",
-    "src/my-view8.html",
-    "src/my-view9.html",
-    "src/my-view10.html",
-    "src/my-view404.html"
+    "src/about_cc.html",
+    "src/contacts.html",
+    "src/downloads.html",
+    "src/header.html",
+    "src/history&plans.html",
+    "src/links.html",
+    "src/our_partners.html",
+    "src/sertification.html",
+    "src/shared-styles.html",
+    "src/why_creativity.html",
+    "src/why_falanster_do_it.html"
   ],
   "sources": [
     "src/**/*",

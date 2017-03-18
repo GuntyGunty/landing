@@ -11,26 +11,26 @@
 
         padding: 0 10px 0 10px;
       }
+      .image {
+        flex: 1 40%;
+      }
 
       .image1 {
         background-image: url('http://lorempixel.com/640/480/');
         width: 400px;
         height: 300px;
-        flex: 1;
       }
 
       .image2 {
         background-image: url('http://lorempixel.com/640/480/');
         width: 400px;
         height: 300px;
-        flex: 1;
       }
 
       .image3 {
         background-image: url('http://lorempixel.com/640/480/');
         width: 400px;
         height: 300px;
-        flex: 1;
       }
 
       .tab {
@@ -44,8 +44,8 @@
       .tabs-header {
         width: 25%;
         position: relative;
-        top: 4em;
-        margin-top: -4em;
+        top: 7em;
+        margin-top: -7em;
         left: 63%;
       }
 
@@ -69,6 +69,7 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
+        margin-top: 1em;
       }
 
       .text {
@@ -76,22 +77,27 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-      }
-
-      .marked-block {
-        flex: 1;
-        background-color: var(--app-mark-color);
-        color: var(--app-general-dark-text-color);
-        width: 70%;
-        padding: 1em;
+        flex: 1 60%;
       }
 
       h1 {
         color: var(--app-mark-color);
       }
 
-      .marked-block h1 {
-        color: inherit;
+      h2 {
+        color: var(--app-mark-color);
+      }
+
+      .marked-block {
+        flex: 1;
+        background-color: var(--app-mark-color);
+        color: var(--app-general-dark-text-color);
+        padding: 1em;
+        margin-bottom: 1em;
+      }
+
+      .marked-block h2 {
+        color: var(--app-general-dark-text-color);
       }
     </style>
 
@@ -113,10 +119,10 @@
         </paper-tabs>
         <iron-pages selected="{{selected}}">
             <article class="tab-article">
-              <div class="image1"></div>
+              <div class="image image1"></div>
               <section class="text">
                 <header class="header">
-                  <h1>Што зрабілі:</h1>
+                  <h2>Што зрабілі:</h2>
                 </header>
                 <ul>
                   <li>Вікіфікацыя (працягваем)</li>
@@ -127,9 +133,9 @@
                 </ul>
                 <article class="marked-block">
                   <header>
-                    <h1>
+                    <h2>
                     Чакаемыя вынікі:
-                    </h1>
+                    </h2>
                   </header>
                   <p>
                     Пазнаваемасць брэнда СС і валоданне элементарнымі ведамі ў мэтавых групах. Пастаянны паток валанцёраў, 3-4 партнёра па змене капірайта, веданне планаў і дэталяў дзяржворганаў па змяненні капірайта
@@ -138,10 +144,10 @@
               </section>
             </article>
             <article class="tab-article">
-              <div class="image2"></div>
+              <div class="image image2"></div>
               <section class="text">
                 <header class="header">
-                  <h1>Што плануем рабіць:</h1>
+                  <h2>Што плануем рабіць:</h2>
                 </header>
                 <ul>
                   <li>Вікіфікацыя (працягваем)</li>
@@ -152,9 +158,9 @@
                 </ul>
                 <article class="marked-block">
                   <header>
-                    <h1>
+                    <h2>
                     Чакаемыя вынікі:
-                    </h1>
+                    </h2>
                   </header>
                   <p>
                     Пазнаваемасць брэнда СС і валоданне элементарнымі ведамі ў мэтавых групах. Пастаянны паток валанцёраў, 3-4 партнёра па змене капірайта, веданне планаў і дэталяў дзяржворганаў па змяненні капірайта
@@ -163,10 +169,10 @@
               </section>
             </article>
             <article class="tab-article">
-              <div class="image3"></div>
+              <div class="image image3"></div>
               <section class="text">
                 <header class="header">
-                  <h1>Што будзем рабіць:</h1>
+                  <h2>Што будзем рабіць:</h2>
                 </header>
                 <ul>
                   <li>Вікіфікацыя (працягваем)</li>
@@ -177,9 +183,9 @@
                 </ul>
                 <article class="marked-block">
                   <header>
-                    <h1>
+                    <h2>
                     Чакаемыя вынікі:
-                    </h1>
+                    </h2>
                   </header>
                   <p>
                     Пазнаваемасць брэнда СС і валоданне элементарнымі ведамі ў мэтавых групах. Пастаянны паток валанцёраў, 3-4 партнёра па змене капірайта, веданне планаў і дэталяў дзяржворганаў па змяненні капірайта
