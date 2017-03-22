@@ -33,7 +33,6 @@
       }
 
       .tomato-image {
-        background-image: url('http://lorempixel.com/640/480/');
         width: 5em;
         height: 5em;
         align-self: center;
@@ -41,7 +40,8 @@
 
       paper-button{
         width: 100%;
-        color: #fff;
+        color: var(--app-general-dark-text-color);
+        background-color: var(--app-mark-color);
       }
 
       .active-elements {
@@ -59,7 +59,7 @@
 
       h1 {
         color: var(--app-general-light-text-color);
-        text-shadow: 2px 1px #454545;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
       }
 
       h2 {
@@ -68,7 +68,7 @@
         font-variant: normal;
         font-weight: normal;
         font-stretch: normal;
-        text-shadow: 2px 1px #454545;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
       }
     </style>
 
@@ -78,21 +78,30 @@
       </header>
       <section class="flex-item middle-section">
         <article class="flex-item">
-        <div class="tomato-image"></div>
-        <h2>Кансультацыі</h2>
+          <picture class="flex-items">
+            <source type="image/svg+xml" srcset="src/assets/images/cc_tomato.svg">
+            <img src="src/assets/images/cc_tomato.png" alt="cc icon" class="tomato-image">
+          </picture>
+          <h2>Кансультацыі</h2>
           <p>
             Фаланстэр праводзіць бесплатныя кансультацыі па выкарыстанню ліцэнзій СС для:- прадстаўнікоў грамадскіх ініцыятыў- некамерцыйных арганізацый- блогераў, журналістаў- творцаў (музыкаў, пісьменнікаў, фільммэйкераў і т.д.)- навукоўцаў і даследнікаў
           </p>
         </article>
         <article class="flex-item">
-          <div class="tomato-image"></div>
+          <picture class="flex-items">
+            <source type="image/svg+xml" srcset="src/assets/images/cc_tomato.svg">
+            <img src="src/assets/images/cc_tomato.png" alt="cc icon" class="tomato-image">
+          </picture>
           <h2>Стажыроўкі<br> і валанцерства</h2>
           <p>
             Мы прапануем расшырэнне навуковага досведу адносна працы з ліцэнзіямі СС для студэнтаў, маладых спецыялістаў і даследчыкаў. У нас можна:- атрымаць тэму для курсавой або дыплома- прайсці студэнцкую практыку- паваланцёрыць непасрэдна ў арганізацыі
           </p>
         </article>
         <article class="flex-item">
-          <div class="tomato-image"></div>
+          <picture class="flex-items">
+            <source type="image/svg+xml" srcset="src/assets/images/cc_tomato.svg">
+            <img src="src/assets/images/cc_tomato.png" alt="cc icon" class="tomato-image">
+          </picture>
           <h2>Лекцыі,<br> прэзентаціі,<br> прамоцыі</h2>
           <p>
             Каманда Фаланстэра праводзіць лекцыі і майстар-классы для:- супольнасцяў- навучэнцаў- працаўнікоў бібліятэк, музеяў, галерэй- настаўнікаў- усіх зацікаўленых.
@@ -100,7 +109,7 @@
         </article>
       </section>
       <section class="flex-item active-elements">
-          <paper-button raised>Далучыцца</paper-button>
+          <paper-button raised>Напісаць нам</paper-button>
       </section>
     </div>
   </template>

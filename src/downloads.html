@@ -1,4 +1,5 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="downloads-material">
@@ -11,9 +12,6 @@
 
       .flex-item {
         flex: 1;
-      }
-
-      header.flex-item {
         align-self: center;
       }
 
@@ -29,7 +27,6 @@
       }
 
       .tomato-image {
-        background-image: url('http://lorempixel.com/640/480/');
         width: 3em;
         height: 3em;
         align-self: center;
@@ -38,6 +35,8 @@
       paper-button{
         width: 100%;
         color: #fff;
+        color: var(--app-general-dark-text-color);
+        background-color: var(--app-mark-color);
       }
 
       .image {
@@ -90,6 +89,14 @@
         color: #000;
         padding: 0 1em;
       }
+
+      .dropdown-button {
+        background-color: var(--app-general-light-color);
+      }
+
+      .dropdown {
+        background-color: var(--app-general-light-color);
+      }
     </style>
 
     <div class="card view6-card">
@@ -99,8 +106,11 @@
       <section class="flex-item middle-section">
         <article class="flex-item">
           <section class="yellow-section">
-            <div class="tomato-image"></div>
-            <h2>дапаможнікі</h2>
+            <picture class="flex-item">
+              <source type="image/svg+xml" srcset="src/assets/images/cc_tomato.svg">
+              <img src="src/assets/images/cc_tomato.png" alt="cc icon" class="tomato-image">
+            </picture>
+          <h2>дапаможнікі</h2>
           </section>
           <div class="image image1"></div>
             <p>
@@ -109,7 +119,10 @@
         </article>
         <article class="flex-item">
           <section class="yellow-section">
-            <div class="tomato-image"></div>
+            <picture class="flex-item">
+              <source type="image/svg+xml" srcset="src/assets/images/cc_tomato.svg">
+              <img src="src/assets/images/cc_tomato.png" alt="cc icon" class="tomato-image">
+            </picture>
             <h2>налепкі</h2>
           </section>
           <div class="image image2"></div>
@@ -119,15 +132,45 @@
         </article>
       </section>
       <section class="flex-item active-elements">
-          <paper-button raised>Карысныя спасылкі</paper-button>
-          <paper-button raised>Далучыцца да каманды</paper-button>
+        <paper-button class="dropdown-button" on-click="handleClick">
+          <span>Карысныя спасылкі</span>
+        </paper-button>
+        <section hidden$="[[shortView]]" class="dropdown">
+          <paper-item><a href="http://it.falanster.by" target="_blank">Falanster</a></paper-item>
+          <paper-item><a href="http://it.falanster.by" target="_blank">Falanster</a></paper-item>
+          <paper-item><a href="http://it.falanster.by" target="_blank">Falanster</a></paper-item>
+          <paper-item><a href="http://it.falanster.by" target="_blank">Falanster</a></paper-item>
+        </section>
+        <paper-button raised>Далучыцца да каманды</paper-button>
       </section>
     </div>
   </template>
 
   <script>
-    Polymer({
-      is: 'downloads-material',
-    });
+  class DownloadsMaterial extends Polymer.Element {
+
+      static get is() { return 'downloads-material' }
+
+      static get properties() {
+        return {
+          user: String,
+          isHappy: Boolean,
+          count: {
+            type: Number,
+            readOnly: true,
+            notify: true
+          },
+          shortView: {
+            type: Boolean,
+            value: true
+          }
+        }
+      }
+
+      handleClick() {
+        this.shortView = !this.shortView;
+      }
+    }
+    customElements.define(DownloadsMaterial.is, DownloadsMaterial);
   </script>
 </dom-module>

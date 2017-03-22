@@ -23,13 +23,15 @@
         background-color: #ccc;
 
         flex-direction: column;
-        justify-content: center;
-        text-shadow: 2px 1px #454545;
+        justify-content: space-around;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
         font-family: Ubuntu;
+
+        height: 39.5em;
       }
 
       .image {
-        background-image: url('http://lorempixel.com/640/480/');
+        /*background-image: url('assets/images/cc_tomato.svg');*/
         width: 5em;
         height: 5em;
         margin-top: 2em;
@@ -50,7 +52,13 @@
     </style>
 
     <div class="card view1-card">
-      <div class="image flex-items"></div>
+      <!-- <div ></div> -->
+
+      <picture class="flex-items">
+        <source type="image/svg+xml" srcset="src/assets/images/cc_tomato.svg">
+        <img src="src/assets/images/cc_tomato.png" alt="cc icon" class="image">
+      </picture>
+
       <h1 class="cc-label flex-items">creative commons</h1>
       <p class="flex-items">affiliate in Belarus</p>
       <p class="flex-items hash-tag">#ccbelarus</p>
