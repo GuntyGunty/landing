@@ -8,11 +8,12 @@
       :host {
         display: block;
 
-        padding: 0 10px 0 10px;
+        padding: 0 10px;
       }
       h1.cc-label {
-        font-size: 3.5em;
-        margin-bottom: -0.6em;
+        font-size: 3em;
+        margin-top: -0.3em;
+        margin-bottom: -0.7em;
         font-style: normal;
         font-variant: normal;
         font-weight: bold;
@@ -20,6 +21,9 @@
       }
 
       .card {
+        background: url('./assets/images/cc_back_2.svg') no-repeat center center;
+        background-size: cover;
+
         background-color: #ccc;
 
         flex-direction: column;
@@ -27,14 +31,23 @@
         text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
         font-family: Ubuntu;
 
-        height: 39.5em;
+        height: 100vh;
+      }
+
+      picture {
+        align-self: center;
+      }
+
+      .top-section {
+        display: flex;
+        flex-direction: column;
       }
 
       .image {
         /*background-image: url('assets/images/cc_tomato.svg');*/
-        width: 5em;
-        height: 5em;
-        margin-top: 2em;
+        width: 4em;
+        height: 4em;
+        margin-bottom: 0;
       }
 
       .flex-items {
@@ -42,6 +55,15 @@
         color: var(--app-general-light-text-color);
         font-size: 1.5em;
         font-weight: 500;
+      }
+
+      .flex-items.natural-text {
+        color: #333333;
+        font-size: 1.5em;
+        text-align: center;
+        text-shadow: none;
+        line-height: 1;
+        font-weight: 400;
       }
 
       .hash-tag {
@@ -53,14 +75,16 @@
 
     <div class="card view1-card">
       <!-- <div ></div> -->
+      <section class="flex-items top-section">
+        <picture>
+          <source type="image/svg+xml" srcset="src/assets/images/cc_tomato.svg">
+          <img src="src/assets/images/cc_tomato.png" alt="cc icon" class="image">
+        </picture>
+        <h1 class="cc-label flex-items">creative commons</h1>
+      </section>
 
-      <picture class="flex-items">
-        <source type="image/svg+xml" srcset="src/assets/images/cc_tomato.svg">
-        <img src="src/assets/images/cc_tomato.png" alt="cc icon" class="image">
-      </picture>
-
-      <h1 class="cc-label flex-items">creative commons</h1>
       <p class="flex-items">affiliate in Belarus</p>
+      <p class="flex-items natural-text">каб было <br> натуральна!</p>
       <p class="flex-items hash-tag">#ccbelarus</p>
     </div>
   </template>
