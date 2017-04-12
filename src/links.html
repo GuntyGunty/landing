@@ -1,5 +1,10 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="shared-styles.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+
+<!-- Custom Fonts -->
+<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="assets/css/cc-icons.min.css">
 
 <dom-module id="falanster-links">
   <template>
@@ -14,9 +19,102 @@
         width: 400px;
         height: 300px;
       }
-
+      .tomato-image {
+        width: 3em;
+        height: 3em;
+        align-self: center;
+      }
       .card {
         flex-direction: column;
+      }
+
+      @font-face
+      {
+       font-family: 'cc-icons';
+       src: url('../fonts/cc-icons.eot');
+       src: local('cc-icons'),
+       url('../fonts/cc-icons.svg') format('svg'),
+       url('../fonts/cc-icons.otf') format('opentype'),
+       url('../fonts/cc-icons.woff') format('woff'),
+       url('../fonts/cc-icons.ttf') format('truetype');
+       font-weight: normal;
+       font-style: normal;
+      }
+
+      .cc
+      {
+       -moz-font-feature-settings: normal;
+       -moz-font-language-override: normal;
+       display: inline-block;
+       font-family: cc-icons;
+       font-size: inherit;
+       font-size-adjust: none;
+       font-stretch: normal;
+       font-style: normal;
+       font-variant: normal;
+       font-weight: normal;
+       line-height: 1;
+       text-rendering: auto;
+      }
+
+      .cc-sa:before
+      {
+       content: "\0061";
+      }
+      /*Attribution*/
+      .cc-by:before
+      {
+       content: "\0062";
+      }
+
+      .cc-cc:before
+      {
+       content: "\0063";
+      }
+
+      .fa-youtube-square:before {
+        content: "\f166";
+      }
+
+      .fa-2x {
+        font-size: 2em;
+      }
+
+      .fa-vk:before {
+        content: "\f189";
+      }
+
+      .fa-facebook-official:before {
+        content: "\f230";
+      }
+
+      .fa-github-square:before {
+        content: "\f092";
+      }
+
+      .fa-github:before {
+        content: "\f09b";
+      }
+
+      .fa-linkedin-square:before {
+        content: "\f08c";
+      }
+
+      @font-face {
+        font-family: 'FontAwesome';
+        src: url('../fonts/fontawesome-webfont.eot?v=4.6.3');
+        src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.6.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.6.3') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.6.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.6.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      .fa {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
     </style>
 
@@ -58,6 +156,38 @@
                 <i class="cc cc-sa"></i></a>
             </span>
           </section>
+          <footer>
+            <picture class="flex-item">
+              <img src="src/assets/images/cc_pic_color_7.png" alt="cc icon" class="tomato-image">
+            </picture>
+            <picture class="flex-item">
+              <img src="src/assets/images/cc_pic_color_5_2.png" alt="cc icon" class="tomato-image">
+            </picture>
+            <picture class="flex-item">
+              <img src="src/assets/images/cc_pic_color_5_3.png" alt="cc icon" class="tomato-image">
+            </picture>
+            <picture class="flex-item">
+              <img src="src/assets/images/cc_pic_color_5_1.png" alt="cc icon" class="tomato-image">
+            </picture>
+            <picture class="flex-item">
+              <img src="src/assets/images/cc_pic_color_6_1.png" alt="cc icon" class="tomato-image">
+            </picture>
+            <picture class="flex-item">
+              <img src="src/assets/images/cc_pic_color_6_2.png" alt="cc icon" class="tomato-image">
+            </picture>
+            <picture class="flex-item">
+              <img src="src/assets/images/cc_pic_color_7.png" alt="cc icon" class="tomato-image">
+            </picture>
+            <picture class="flex-item">
+              <img src="src/assets/images/cc_pic_color_5_2.png" alt="cc icon" class="tomato-image">
+            </picture>
+            <picture class="flex-item">
+              <img src="src/assets/images/cc_pic_color_5_3.png" alt="cc icon" class="tomato-image">
+            </picture>
+            <picture class="flex-item">
+              <img src="src/assets/images/cc_pic_color_5_1.png" alt="cc icon" class="tomato-image">
+            </picture>
+          </footer>
     </div>
   </template>
 
