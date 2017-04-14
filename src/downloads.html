@@ -40,23 +40,19 @@
       }
 
       .image {
-        margin: 1em;
+        margin-left: 0;
+        width: 300px;
+        height: 200px;
+        flex: 1;
+        --aspect-ratio:600/400;
       }
 
       .image1 {
         background-image: url('http://lorempixel.com/640/480/');
-        width: 400px;
-        height: 300px;
-        flex: 1;
-        --aspect-ratio:600/400;
       }
 
       .image2 {
         background-image: url('http://lorempixel.com/640/480/');
-        width: 400px;
-        height: 300px;
-        flex: 1;
-        --aspect-ratio:600/400;
       }
 
       .active-elements {
@@ -71,9 +67,8 @@
       article {
         display: flex;
         flex-direction: column;
-        -ms-align-items: center;
-        align-items: center;
-
+        -ms-align-items: flex-start;
+        align-items: flex-start;
       }
 
       h2 {
@@ -81,7 +76,7 @@
       }
 
       p {
-        padding: 0 1em;
+        padding-right: 2em;
       }
       /*h1 {
         color: var(--app-general-light-text-color);
@@ -100,7 +95,9 @@
 
       .dropdown {
         background-color: var(--app-general-light-color);
+        margin: 0 0.29em;
       }
+
     </style>
 
     <div class="card view6-card">

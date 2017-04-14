@@ -15,8 +15,13 @@
         padding: 0 10px 0 10px;
       }
 
-      a.no_underline {
+      a {
         text-decoration: none;
+      }
+
+      footer {
+        display: flex;
+        justify-content: space-around;
       }
 
       .image {
@@ -25,12 +30,18 @@
         height: 300px;
       }
       .tomato-image {
-        width: 3em;
-        height: 3em;
+        width: 4em;
+        height: 4em;
         align-self: center;
       }
       .card {
         flex-direction: column;
+      }
+
+      section {
+        align-self: center;
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 1em;
       }
 
       @font-face
@@ -121,35 +132,39 @@
       .fa-linkedin-square:before {
         content: "\f08c";
       }
+
+      .element {
+        margin: 0 0.5em;
+      }
     </style>
 
     <div class="card view9-card">
           <section class="bottom-menu">
-            <a href="https://falanster.by/be">Фаланстэр</a>
-            <a href="https://falanster.by/be">Меню 1</a>
-            <a href="https://falanster.by/be">Меню 2</a>
-            <a href="https://falanster.by/be">Меню 3</a>
+            <a href="https://falanster.by/be" class="element">Фаланстэр</a>
+            <a href="https://falanster.by/be" class="element">Меню 1</a>
+            <a href="https://falanster.by/be" class="element">Меню 2</a>
+            <a href="https://falanster.by/be" class="element">Меню 3</a>
           </section>
           <section class="contact">
-            <span>Звязацца з намі:</span>
-            <span><a href="mailto:falanster.by@gmail.com">falanster.by@gmail.com</a></span>
-            <span><a href="tel:+375291274267">+375 29 127 42 67</a></span>
+            <span class="element">Звязацца з намі:</span>
+            <span class="element"><a href="mailto:falanster.by@gmail.com">falanster.by@gmail.com</a></span>
+            <span class="element"><a href="tel:+375291274267">+375 29 127 42 67</a></span>
           </section>
           <section class="social">
             <span class="icons">
-              <a href="https://www.facebook.com/groups/1039026109504642/?fref=ts" target="_blank" class="no_underline">
+              <a class="element" href="https://www.facebook.com/groups/1039026109504642/?fref=ts" target="_blank" class="no_underline">
                 <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
               </a>
-              <a href="https://vk.com/dig_lab" target="_blank" class="no_underline">
+              <a class="element" href="https://vk.com/dig_lab" target="_blank" class="no_underline">
                 <i class="fa fa-vk fa-2x" aria-hidden="true"></i>
               </a>
-              <a href="https://github.com/diglabby" target="_blank" class="no_underline">
+              <a class="element" href="https://github.com/diglabby" target="_blank" class="no_underline">
                 <i class="fa fa-github fa-2x" aria-hidden="true"></i>
               </a>
-              <a href="https://www.youtube.com/channel/UCAmTfxxasQwNaKkljnmvc5A" target="_blank" class="no_underline">
+              <a class="element" href="https://www.youtube.com/channel/UCAmTfxxasQwNaKkljnmvc5A" target="_blank" class="no_underline">
                 <i class="fa fa-youtube-square fa-2x" aria-hidden="true"></i>
               </a>
-              <a href="https://www.linkedin.com/groups/12028397" target="_blank" class="no_underline">
+              <a class="element" href="https://www.linkedin.com/groups/12028397" target="_blank" class="no_underline">
                 <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
               </a>
             </span>

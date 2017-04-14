@@ -13,24 +13,22 @@
       }
       .image {
         flex: 1 40%;
+        margin-top: 1.8em;
+        width: 400px;
+        height: 300px;
+        margin-right: 2.5em;
       }
 
       .image1 {
         background-image: url('http://lorempixel.com/640/480/');
-        width: 400px;
-        height: 300px;
       }
 
       .image2 {
         background-image: url('http://lorempixel.com/640/480/');
-        width: 400px;
-        height: 300px;
       }
 
       .image3 {
         background-image: url('http://lorempixel.com/640/480/');
-        width: 400px;
-        height: 300px;
       }
 
       .tab {
@@ -42,11 +40,13 @@
       }
 
       .tabs-header {
-        width: 25%;
+        width: 50%;
         position: relative;
         top: 7em;
         margin-top: -7em;
-        left: 63%;
+        left: 45%;
+        background-color: #b3b3b3;
+        color: var(--app-general-light-text-color)
       }
 
       .tabs {
@@ -73,19 +73,25 @@
       }
 
       .text {
-        margin-top: 4em;
+        margin-top: 5em;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         flex: 1 60%;
       }
 
       h1 {
         color: var(--app-mark-color);
+        align-self: center;
+        -webkit-margin-after: 1.1em;
       }
 
       h2 {
         color: var(--app-mark-color);
+      }
+
+      ul {
+        -webkit-margin-before: 0;
       }
 
       .marked-block {
@@ -103,67 +109,64 @@
 
     <div class="card view4-card">
       <!-- <div class="circle">4</div> -->
-      <header class="header">
-        <h1>Гісторыя дзейнасці і планы</h1>
+              <h1>Гісторыя дзейнасці і планы</h1>
       </header>
         <paper-tabs selected="{{selected}}" scrollable class="tabs-header">
+          <paper-tab class="tab">
+            2014
+          </paper-tab>
+          <paper-tab class="tab">
+            2015
+          </paper-tab>
           <paper-tab class="tab">
             2016
           </paper-tab>
           <paper-tab class="tab">
             2017
           </paper-tab>
-          <paper-tab class="tab">
-            2018
-          </paper-tab>
         </paper-tabs>
         <iron-pages selected="{{selected}}">
             <article class="tab-article">
               <div class="image image1"></div>
               <section class="text">
-                <header class="header">
-                  <h2>Што зрабілі:</h2>
-                </header>
+                Што зрабілі:
                 <ul>
-                  <li>Вікіфікацыя (працягваем)</li>
-                  <li>стварэнне мануалаў для супольнасцяў і творцаў</li>
-                  <li>разгортванне сертыфікацыі арганізацый</li>
-                  <li>пераклад ліцэнзій на беларускую мову (конкурс)</li>
-                  <li>перамовы з супольнасцямі па сумеснай працы над зменай капірайта</li>
+                  <li>люты 2014 - пераклады Deeds</li>
+                  <li>люты 2014 - Дзень адкрытых дадзеных</li>
+                  <li>пачатак лета - восень 2014 - Смачная творчасць</li>
+                  <li>лета-восень - перапіска з дзяржворганамі</li>
+                  <li>29 жніўня 2014 - заснаванне Фаланстэра</li>
                 </ul>
                 <article class="marked-block">
                   <header>
                     <h2>
-                    Чакаемыя вынікі:
+                    Вынікі:
                     </h2>
                   </header>
                   <p>
-                    Пазнаваемасць брэнда СС і валоданне элементарнымі ведамі ў мэтавых групах. Пастаянны паток валанцёраў, 3-4 партнёра па змене капірайта, веданне планаў і дэталяў дзяржворганаў па змяненні капірайта
-                  </p>
+                    Аднавілі дзейнасць у фармаце “філіял”, наладзілі міжнародныя сувязі, правялі рэвізію задач і бачання будучай дзейнасці, акцентаваліся на папулярызацыі СС                  </p>
                 </article>
               </section>
             </article>
             <article class="tab-article">
               <div class="image image2"></div>
               <section class="text">
-                <header class="header">
-                  <h2>Што плануем рабіць:</h2>
-                </header>
+                                Што зрабілі:
                 <ul>
-                  <li>Вікіфікацыя (працягваем)</li>
-                  <li>стварэнне мануалаў для супольнасцяў і творцаў</li>
-                  <li>разгортванне сертыфікацыі арганізацый</li>
-                  <li>пераклад ліцэнзій на беларускую мову (конкурс)</li>
-                  <li>перамовы з супольнасцямі па сумеснай працы над зменай капірайта</li>
+                  <li>з канца 2014 - Вікіфікацыя</li>
+                  <li>люты 2015 - удзел у дні адкрытых дадзеных</li>
+                  <li>сакавік 2015 - дзень адкрытых адукацыйных рэсурсаў</li>
+                  <li>восень 2015 - стварэнне ФБ-групы СС</li>
+                  <li>выданне на СС: дапаможнікі вікіпедыста (2015,2016), раварыста (2013, 2014, 2017)</li>
                 </ul>
                 <article class="marked-block">
                   <header>
                     <h2>
-                    Чакаемыя вынікі:
+                      Вынікі:
                     </h2>
                   </header>
                   <p>
-                    Пазнаваемасць брэнда СС і валоданне элементарнымі ведамі ў мэтавых групах. Пастаянны паток валанцёраў, 3-4 партнёра па змене капірайта, веданне планаў і дэталяў дзяржворганаў па змяненні капірайта
+                    Перапрафіляваліся на практычную і больш  выніковую дзейнасць
                   </p>
                 </article>
               </section>
@@ -171,10 +174,28 @@
             <article class="tab-article">
               <div class="image image3"></div>
               <section class="text">
-                <header class="header">
-                  <h2>Што будзем рабіць:</h2>
-                </header>
+                                Што зрабілі:
                 <ul>
+                  <li>удзел у канферэнцыях (Женева, красавік 2016; Капікэмп, кастрычнік 2016, Лінуксоўка 2016, Лісабон, верасень 2016)</li>
+                  <li>кастрычнік 2016 - тыдзень адкрытага доступа</li>
+                  <li>лістапад 2016 - сустрэча у Мінску: Беларусь - Украіна</li>
+                </ul>
+                <article class="marked-block">
+                  <header>
+                    <h2>
+                    Вынікі:
+                    </h2>
+                  </header>
+                  <p>
+                    Аднавілі дзейнасць у фармаце “філіял”, наладзілі міжнародныя сувязі, правялі рэвізію задач і бачання будучай дзейнасці, акцентаваліся на папулярызацыі СС                  </p>
+                </article>
+              </section>
+            </article>
+            <article class="tab-article">
+              <div class="image image3"></div>
+              <section class="text">
+                                Што плануем рабіць:
+                                <ul>
                   <li>Вікіфікацыя (працягваем)</li>
                   <li>стварэнне мануалаў для супольнасцяў і творцаў</li>
                   <li>разгортванне сертыфікацыі арганізацый</li>
@@ -188,8 +209,7 @@
                     </h2>
                   </header>
                   <p>
-                    Пазнаваемасць брэнда СС і валоданне элементарнымі ведамі ў мэтавых групах. Пастаянны паток валанцёраў, 3-4 партнёра па змене капірайта, веданне планаў і дэталяў дзяржворганаў па змяненні капірайта
-                  </p>
+                  Пазнаваемасць брэнда СС і валоданне элементарными ведамі ў мэтавых групах. Пастаянны паток валанцёраў, 3-4 партнёра па змене капірайта, веданне планаў і дэталяў дзяржворганаў па змяненні капірайта                  </p>
                 </article>
               </section>
             </article>
