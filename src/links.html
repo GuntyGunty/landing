@@ -140,10 +140,9 @@
 
     <div class="card view9-card">
           <section class="bottom-menu">
-            <a href="https://falanster.by/be" class="element">Фаланстэр</a>
-            <a href="https://falanster.by/be" class="element">Меню 1</a>
-            <a href="https://falanster.by/be" class="element">Меню 2</a>
-            <a href="https://falanster.by/be" class="element">Меню 3</a>
+            <template is="dom-repeat" id="views-top" items="{{activeViews}}">
+              <a href="javascript:document.querySelector('my-app').shadowRoot.querySelector('#[[item.name]]').scrollIntoView()" class="element">[[item.label]]</a>
+            </template>
           </section>
           <section class="contact">
             <span class="element">Звязацца з намі:</span>
@@ -212,8 +211,30 @@
   </template>
 
   <script>
-    Polymer({
-      is: 'falanster-links',
-    });
+  class FalansterLinks extends Polymer.Element {
+    static get is() { return 'falanster-links'; }
+
+    static get properties() {
+      return {
+        activeViews: {
+          type: Array,
+          value: [
+            { name: "view1", label: "Главная", index: 0 },
+            { name: "view2", label: "Што такое CC", index: 1 },
+            { name: "view3", label: "Фаландстэр і СС", index: 2 },
+            { name: "view5", label: "Смачная творчасць", index: 3 },
+            { name: "view6", label: "Супрацоўнікі", index: 4 },
+            { name: "view4", label: "Гісторыя і планы", index: 5 },
+            { name: "view7", label: "Сертыфікацыя", index: 6 },
+            { name: "downloads-material", label: "Што скачаць", index: 7 },
+            { name: "falanster-links", label: "Карысныя спасылкі", index: 8 },
+            { name: "falanster-contacts", label: "Кантакты", index: 9 }
+          ]
+        }
+      }
+    }
+  }
+
+  customElements.define(FalansterLinks.is, FalansterLinks);
   </script>
 </dom-module>

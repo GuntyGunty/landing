@@ -58,6 +58,8 @@
       .active-elements {
         align-self: center;
         width: 100%;
+        display: flex;
+        flex-direction: column;
       }
 
       .middle-section__column {
@@ -91,6 +93,11 @@
 
       .dropdown-button {
         background-color: var(--app-general-light-color);
+        width: 80%;
+        margin-bottom: 1em;
+        align-self: center;
+        display: flex;
+        justify-content: space-between;
       }
 
       .dropdown {
@@ -133,6 +140,7 @@
       <section class="flex-item active-elements">
         <paper-button class="dropdown-button" on-click="handleClick">
           <span>Карысныя спасылкі</span>
+          <iron-icon icon="icons:arrow-drop-down"> </iron-icon>
         </paper-button>
         <section hidden$="[[shortView]]" class="dropdown">
           <paper-item><a href="http://it.falanster.by" target="_blank">Falanster</a></paper-item>

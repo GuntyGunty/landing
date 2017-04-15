@@ -14,7 +14,7 @@
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/app-localize-behavior/app-localize-behavior.html">
-
+<link rel="import" href="../bower_components/polymer/lib/elements/dom-repeat.html">
 
 <link rel="import" href="my-icons.html">
 <link rel="import" href="about_cc.html">
@@ -68,40 +68,66 @@
         font-weight: bold;
       }
 
+      .main-title {
+      }
+
       my-view1 {
         background-color: var(--app-header-color);
+      }
+
+      .dropdown-button {
+        background-color: var(--app-general-light-color);
+      }
+
+      .dropdown {
+        background-color: var(--app-general-light-color);
+        margin: 0 0.29em;
+        position: absolute;
+        left: 0;
+        width: 99.4%;
+
+      }
+
+      .menu-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .menu-item {
+        align-self: center;
       }
 
     </style>
 
     <app-drawer-layout fullbleed>
-      <!-- Drawer content -->
-      <!-- <app-drawer id="drawer">
-        <app-toolbar>
-          Menu
-        </app-toolbar>
-        <iron-selector selected="{{selected}}" attr-for-selected="name" slot="drawer-list" role="navigation">
-          <dom-repeat>
-            <template id="left-menu-items" items="{{activeViews}}">
-              <a name="[[item.index]]" href="#[[item.name]]">[[item.label]]</a>
-            </template>
-          </dom-repeat>
-        </iron-selector>
-      </app-drawer> -->
-
       <!-- Main content -->
       <app-header-layout>
         <app-header condpaper-stepperenses reveals effects="waterfall" class="falanster-menu">
           <app-toolbar>
-            <div main-title>Фаланстэр </div>
-            <!-- <paper-stepper selected={{selected}}>
-              <dom-repeat>
-                <template id="views-top" items="{{activeViews}}">
-                  <paper-step title="[[item.label]]">
-                  </paper-step>
-                </template>
-              </dom-repeat>
-            </paper-stepper> -->
+            <section class="flex-item active-elements">
+            <paper-icon-button icon="menu" on-click="handleClick"></paper-icon-button>
+              <section hidden$="[[shortView]]" class="dropdown">
+                <section class="menu-list">
+                    <template is="dom-repeat" id="views-top" items="{{activeViews}}">
+                      <!-- <paper-step title="[[item.label]]"> -->
+                        <paper-item class="menu-item">
+                          <!-- <a
+                            href="/#[[item.name]]"
+                            > -->
+                          <a href="javascript:document.querySelector('my-app').shadowRoot.querySelector('#[[item.name]]').scrollIntoView()">
+                            [[item.label]]
+                          </a>
+                        </paper-item>
+                    </template>
+                  <!-- <paper-item class="menu-item"><a href="http://it.falanster.by" target="_blank">Falanster</a></paper-item>
+                  <paper-item class="menu-item"><a href="http://it.falanster.by" target="_blank">Falanster</a></paper-item>
+                  <paper-item class="menu-item"><a href="http://it.falanster.by" target="_blank">Falanster</a></paper-item>
+                  <paper-item class="menu-item"><a href="http://it.falanster.by" target="_blank">Falanster</a></paper-item> -->
+                </section>
+              </section>
+            </section>
+            <div class="main-title">Фаланстэр </div>
           </app-toolbar>
         </app-header>
 
@@ -125,26 +151,11 @@
   </template>
 
   <script>
-    Polymer({
-      is: 'my-app',
-      behaviors: [
-       Polymer.AppLocalizeBehavior
-      ],
-      ready: function() {
-        this.activeViews = [
-          { name: "view1", label: "Главная", index: 0 },
-          { name: "view2", label: "Што такое CC", index: 1 },
-          { name: "view3", label: "Фаландстэр і СС", index: 2 },
-          { name: "view4", label: "Гісторыя і планы", index: 3 },
-          { name: "view5", label: "Смачная творчасць", index: 4 },
-          { name: "view6", label: "Супрацоўнікі", index: 5 },
-          { name: "view7", label: "Сертыфікацыя", index: 6 },
-          { name: "view8", label: "Што скачаць", index: 7 },
-          { name: "view9", label: "Карысныя спасылкі", index: 8 },
-          { name: "view10", label: "Кантакты", index: 9 }
-        ];
-      },
-      properties: {
+  class MyApp extends Polymer.Element {
+    static get is() { return 'my-app'; }
+
+    static get properties() {
+      return {
         page: {
           type: String,
           reflectToAttribute: true
@@ -152,40 +163,33 @@
         language: {
           value: 'by'
         },
-        selected: {
-          type: String,
-          reflectToAttribute: true,
-          observer: '_selectorChanged',
+        shortView: {
+          type: Boolean,
+          value: true
+        },
+        activeViews: {
+          type: Array,
+          value: [
+            { name: "view1", label: "Главная", index: 0 },
+            { name: "view2", label: "Што такое CC", index: 1 },
+            { name: "view3", label: "Фаландстэр і СС", index: 2 },
+            { name: "view5", label: "Смачная творчасць", index: 3 },
+            { name: "view6", label: "Супрацоўнікі", index: 4 },
+            { name: "view4", label: "Гісторыя і планы", index: 5 },
+            { name: "view7", label: "Сертыфікацыя", index: 6 },
+            { name: "downloads-material", label: "Што скачаць", index: 7 },
+            { name: "falanster-links", label: "Карысныя спасылкі", index: 8 },
+            { name: "falanster-contacts", label: "Кантакты", index: 9 }
+          ]
         }
-      },
-
-      observers: [
-        '_routePageChanged(routeData.page)',
-        '_selectorChanged(selected)'
-      ],
-
-      _routePageChanged: function(page) {
-        this.page = page ? page : 'view1';
-        this.selected = this.page.split('view')[1] - 1;
-
-      },
-
-      _selectorChanged: function(selector) {
-        var url = location.href;               //Save down the URL without hash.
-
-        this.page = selector ? 'view'+( +selector + 1) : 'view1';
-        location.href = "/#"+this.page;                 //Go to the target element.
-        history.replaceState(null,null,url);   //Don't like hashes. Changing it back.
-
-      },
-
-      _showPage404: function() {
-        this.page = 'view404';
-      },
-
-      attached: function() {
-        this.loadResources(this.resolveUrl('assets/locales.json'));
       }
-    });
+    }
+
+    handleClick() {
+      this.shortView = !this.shortView;
+    }
+  }
+
+  customElements.define(MyApp.is, MyApp);
   </script>
 </dom-module>
