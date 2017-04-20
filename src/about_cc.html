@@ -6,7 +6,6 @@
     <style include="shared-styles">
       :host {
         display: block;
-        padding: 0 10px 0 10px;
         color: var(--app-general-dark-text-color);
       }
 
@@ -15,8 +14,8 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        width: 400px;
-        height: 300px;
+        width: 20em;
+        height: 15em;
         flex: 1 100%;
       }
 
@@ -37,6 +36,7 @@
         background-color: var(--app-mark-color);
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: space-around;
         margin: 1em 2em;
       }
@@ -44,8 +44,9 @@
       .general-content {
         flex: 1;
         display: flex;
-        direction: row;
+        flex-direction: row;
         padding: 0 1.8em;
+        flex-wrap: nowrap;
       }
 
       .card {
@@ -65,11 +66,11 @@
           <p class="marked-text">Толькі ўяві: ты,  душэўны і сябравіты,  жадаеш накарміць смачнымі дранчікамі ўвесь навакольны  свет.  Гатаваць самому, дарэчы, сэнсу няма, а вось навучыць рэцепту – справа іншая. Ты робіш дранікаблог, куды ўжо гатовы дадаць чыёсці відэа, прышпільныя фатаграфіі з інета і пашагавыя інструкцыі, што распрацаваў кулінар з лепшай у горадзе сталоўкі. І ўсе бы добра, але капірайт глядзіць на цябе і ціхенька гаворыць “ну-ну, паспрабуй -  я пагляджу”.</p>
         </section>
         <section class="general-content">
-          <section>
+          <section class="flex-item">
             <h1>Што такое Creative Commons</h1>
             <p>“А вось і паспрабую” – аднойчы дзёрзка адказаў капірайту прафесар права Лорэнс Лессіг і ў 2001 годзе даў дарогу Creative Commons (CC) -  некамерцыйнай  арганізацыі,  што стварыла бясплатныя для выкарыстання  публічныя ліцэнзіі. З дапамогай гэтых ліцэнзій аўтары могуць даступна і зразумела выказаць сваю волю адносна твораў і распаўсюджваць іх больш шырока і вальготна.</p>
           </section>
-          <section>
+          <section class="flex-item">
             <div class="image"></div>
           </section>
         </section>

@@ -11,8 +11,6 @@
     <style include="shared-styles">
       :host {
         display: block;
-
-        padding: 0 10px 0 10px;
       }
 
       a {
@@ -26,11 +24,11 @@
 
       .image {
         background-image: url('assets/images/placeholder.jpg');
-        width: 400px;
-        height: 300px;
+        width: 20em;
+        height: 15em;
       }
       .tomato-image {
-        width: 4em;
+        /* width: 4em; */
         height: 4em;
         align-self: center;
       }
@@ -139,11 +137,11 @@
     </style>
 
     <div class="card view9-card">
-          <section class="bottom-menu">
+          <!-- <section class="bottom-menu">
             <template is="dom-repeat" id="views-top" items="{{activeViews}}">
               <a href="javascript:document.querySelector('my-app').shadowRoot.querySelector('#[[item.name]]').scrollIntoView()" class="element">[[item.label]]</a>
             </template>
-          </section>
+          </section> -->
           <section class="contact">
             <span class="element">Звязацца з намі:</span>
             <span class="element"><a href="mailto:falanster.by@gmail.com">falanster.by@gmail.com</a></span>

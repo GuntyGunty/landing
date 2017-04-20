@@ -6,7 +6,6 @@
     <style include="shared-styles">
       :host {
         display: block;
-        padding: 0 10px 0 10px;
       }
 
       .flex-item {
@@ -20,6 +19,7 @@
 
       .middle-section {
         display: flex;
+        flex-wrap: wrap;
       }
 
       .card {
@@ -28,12 +28,11 @@
         background-color: #b3b3b3;
         color: var(--app-general-light-text-color);
 
-        font-weight: 500;
-        font-family: Ubuntu;
+        font-weight: bold;
       }
 
       .tomato-image {
-        width: 5em;
+        /*width: 5em;*/
         height: 5em;
         align-self: center;
       }
@@ -76,7 +75,7 @@
       }
 
       ul {
-        -webkit-margin-before: 0;        
+        -webkit-margin-before: 0;
         -webkit-padding-start: 1em;
       }
     </style>
